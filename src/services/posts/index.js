@@ -1,6 +1,7 @@
 import mongoose from 'feathers-mongoose';
 import { authenticate } from '@feathersjs/authentication';
 import models from 'models';
+import hooks from './hooks';
 
 export default app =>
   app
@@ -20,7 +21,7 @@ export default app =>
         create: [authenticate('jwt')],
         update: [authenticate('jwt')],
         patch: [authenticate('jwt')],
-        remove: [authenticate('jwt')],
+        remove: [authenticate('jwt'), hooks.authorizeRemove],
       },
       after: {},
     });

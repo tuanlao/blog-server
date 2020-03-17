@@ -10,6 +10,7 @@ const schema = new mongoose.Schema(
       index: true,
     },
     password: { type: String, required: true, index: true },
+    role: { type: String, required: true },
   },
   { collection: 'users', timestamps: true },
 );

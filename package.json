@@ -1,7 +1,7 @@
 {
-  "name": "blog-server",
+  "name": "node-template",
   "version": "1.0.0",
-  "description": "My blog server",
+  "description": "My nodejs template as a blog server",
   "directories": {
     "lib": "src"
   },
@@ -10,8 +10,11 @@
     "node": ">=7"
   },
   "scripts": {
-    "start": "node-dev src",
+    "build:clean": "rimraf lib",
     "build": "babel src -d lib",
+    "doc": "documentation build src/** --format html --github --document-exported --output doc/api",
+    "prebuild": "npm run build:clean",
+    "start": "node-dev src",
     "start-prod": "NODE_ENV=production npm run build & node lib"
   },
   "repository": {
@@ -36,7 +39,6 @@
     "@feathersjs/transport-commons": "^4.5.2",
     "acorn": "^7.1.1",
     "ajv": "^6.12.0",
-    "aws-sdk": "^2.611.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -65,6 +67,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-source-map-support": "^2.1.1",
+    "documentation": "^12.1.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-base": "^14.0.0",
