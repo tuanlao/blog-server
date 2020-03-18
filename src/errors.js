@@ -1,5 +1,4 @@
 /* eslint-disable max-classes-per-file */
-// @flow
 
 import errors, { FeathersError } from '@feathersjs/errors';
 import { omit } from 'lodash/fp';

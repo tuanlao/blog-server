@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuanlv1634/blog-server.git"
+    "url": "git://github.com/tuanlao/node-template.git"
   },
   "author": "TuanLV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tuanlv1634/blog-server/issues"
+    "url": "https://github.com/tuanlao/node-template/issues"
   },
-  "homepage": "https://github.com/tuanlv1634/blog-server#readme",
+  "homepage": "https://github.com/tuanlao/node-template#readme",
   "dependencies": {
     "@babel/polyfill": "^7.8.3",
     "@feathersjs/authentication": "^4.5.2",

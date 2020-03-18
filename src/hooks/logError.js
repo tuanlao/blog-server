@@ -1,5 +1,3 @@
-// @flow
-
 import { set } from 'lodash';
 import { isNumber, pick } from 'lodash/fp';
 import errors from 'errors';
