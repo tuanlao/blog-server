@@ -46,10 +46,12 @@
     "feathers-logger": "^0.3.2",
     "feathers-mongoose": "^8.3.0",
     "feathers-reactive": "^0.8.1",
+    "forever": "^2.0.0",
     "helmet": "^3.21.3",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
     "mongoose": "^5.8.11",
+    "source-map-support": "^0.5.16",
     "winston": "^3.2.1"
   },
   "devDependencies": {
