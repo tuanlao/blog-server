@@ -15,7 +15,10 @@
     "doc": "documentation build src/** --format html --github --document-exported --output doc/api",
     "prebuild": "npm run build:clean",
     "start": "node-dev src",
-    "start-prod": "NODE_ENV=production npm run build & node lib"
+    "start-prod": "NODE_ENV=production npm run build & node lib",
+    "test:clean": "rimraf ./coverage",
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -69,6 +72,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-source-map-support": "^2.1.1",
+    "cross-env": "^7.0.2",
     "documentation": "^12.1.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -77,6 +81,12 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "expect-more-jest": "^4.0.0",
+    "jest": "^25.2.2",
+    "jest-extended": "^0.11.5",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-toggle-config": "^1.0.2",
+    "jest-watch-typeahead": "^0.4.2",
     "node-dev": "^4.0.0",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1"
