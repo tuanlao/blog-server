@@ -1,10 +1,10 @@
 import mongoose from 'feathers-mongoose';
 import { authenticate } from '@feathersjs/authentication';
-import { hooks } from '@feathersjs/authentication-local';
 import { validateSchema } from 'feathers-hooks-common';
 import ajv from 'ajv';
 import schemas from 'schemas';
 import models from 'models';
+import hooks from './hooks';
 
 export default app =>
   app
@@ -19,16 +19,20 @@ export default app =>
     .service('users')
     .hooks({
       before: {
-        find: [],
-        get: [],
+        find: [authenticate('jwt')],
+        get: [authenticate('jwt')],
         create: [
-          authenticate('jwt'),
           validateSchema(schemas.UserCreateRequest, ajv),
           hooks.hashPassword('password'),
+          hooks.assignRole,
         ],
-        update: [authenticate('jwt'), hooks.hashPassword('password')],
-        patch: [authenticate('jwt')],
-        remove: [authenticate('jwt')],
+        update: [
+          authenticate('jwt'),
+          hooks.hashPassword('password'),
+          hooks.assignRole,
+        ],
+        patch: [authenticate('jwt'), hooks.assignRole],
+        remove: [hooks.methodNotAllowed],
       },
       after: {
         all: [hooks.protect('password')],
