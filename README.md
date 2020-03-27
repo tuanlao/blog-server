@@ -1,5 +1,8 @@
 # FeatherJS Template
 
+[![Author](https://img.shields.io/badge/author-%40tuanlao-blue)](https://github.com/tuanlao)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/tuanlao/feathers-template/blob/master/LICENSE.md)
+
 ## Getting started
 
 A boilerplate/template project for quickly building production-ready RESTful APIs using Node.js, FeathersJS, and Mongoose.
