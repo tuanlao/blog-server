@@ -18,7 +18,8 @@
     "start-prod": "NODE_ENV=production npm run build & node lib",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
