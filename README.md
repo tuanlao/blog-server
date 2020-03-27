@@ -20,6 +20,7 @@ It comes with many built-in features, such as authentication using JWT, request 
 - **Testing**: unit tests using [Jest](https://jestjs.io/)
 - **Docker support**
 - **Linting**: with [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
+- **Logger**: [winston](https://www.npmjs.com/package/winston)
 
 ## Convention
 

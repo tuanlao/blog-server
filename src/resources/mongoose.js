@@ -1,5 +1,6 @@
 import os from 'os';
 import { delay, size } from 'lodash/fp';
+import { set } from 'lodash';
 import mongoose from 'mongoose';
 
 export default app => {
@@ -16,7 +17,11 @@ export default app => {
   const options = {
     poolSize: process.env.UV_THREADPOOL_SIZE || size(os.cpus()) * 2,
   };
-  mongoose.set('debug', true);
+  if (process.env.NODE_ENV === 'production') {
+    set(options, 'config.autoIndex', false);
+  } else {
+    mongoose.set('debug', true);
+  }
   const mongodbURL = app.get('mongodbURL');
   const mongodbURLObject = new URL(mongodbURL);
   mongodbURLObject.password = process.env.MONGODB_PASSWORD || '';
