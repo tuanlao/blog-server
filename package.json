@@ -52,7 +52,7 @@
     "forever": "^2.0.0",
     "helmet": "^3.21.3",
     "lodash": "^4.17.15",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "mongoose": "^5.8.11",
     "source-map-support": "^0.5.16",
     "winston": "^3.2.1"
